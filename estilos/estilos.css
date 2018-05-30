@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Rajdhani', sans-serif;
+}
+.panelbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 3em;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    background-color: #943B50;
+    font-family: arial;
+    font-size: 18px;
+}
+  
+.panelbar ul li a {
+    display: block;
+    color: white;
+    padding: 1em 1em;
+    text-decoration: none;
+    text-align: left;
+}
+  
+.panelbar ul li a:hover {
+    background-color: #D97565;
+    color: white;
+}
+
+.panelbar ul li:after{
+    content: attr(title);
+    position:absolute;
+    left:5em;
+    top:0;
+    height:5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-transform:uppercase;
+    background:#ff5c62;
+    padding:2em;
+    transition: all 0.3s ease-in-out;
+    visibility:hidden;
+    opacity:0;
+}
+.panelbar ul li:hover:after{
+    visibility:visible;
+    opacity:1;
+}
+  .active {
+    background-color: lightblue;
+    color: white;
+  }
+.logo-hdv{
+   padding-top: 60px;
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.descripcion{
+    color: white;
+    font-size: 1.5em;
+}
+
+.piedepag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    text-align: center;
+    max-height: 15%;
+}
+
+.logo-aso, .logo-uao, .logo-icesi {
+    padding-left: 20px;
+}
+
+.logo-aso{
+    position: relative;
+    bottom: 0;
+}
+
+.logo-uao{
+    position: relative;
+    bottom: 5px;
+}
+.logo-icesi{
+    position: relative;
+    bottom: 17px;
+}
+
+
+@media (max-width: 600px) {
+      .piedepag>p{
+        visibility: hidden;
+      }
+
+      .piedepag{
+        position: fixed;
+    bottom: 0;
+      }
+
+    .logo-aso, .logo-uao, .logo-icesi {
+        padding-left: 5px;
+        max-width: 50px;
+      }
+
+    .logo-icesi{
+        position: relative;
+        bottom: 15px;
+    }
+    .logo-uao{
+        position: relative;
+        bottom: 0px;
+    }
+}
+
+.piedepag>p{
+   
+    position: absolute;
+    margin-left: 30%;
+    margin-top: 2%;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 800;
+    
+}
+
+.btn_in_go_doc{
+    background-color: #943B50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+}
+
+.btn_in_go_doc:hover{
+    background-color: #D97565; 
+}
+
+.descripcion{
+    font-weight: 800;
+}
+
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+
+.contenido{
+    margin: auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* TERMINA ESTILOS INDEX Y GENERALES*/
+
+/* INICIA ESTILOS SECCIÓN DOCUMENTAL*/
+
+.cont_sec_doc{
+    position: fixed;
+    background: #D97565;
+    width: 100%;
+    height: 100%;
+}
+
+.popup, popupDos, popupTres, popupCuatro, popupCinco {
+    position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   background:white;
+   width: 70%;
+   border-radius:7px;
+   border:1px solid #e5e5e5;
+   font-family:'helvetica neue';
+   display: none;
+}
+
+.videowrapper {
+ position: relative;
+ padding-bottom: 56.25%;
+ height: 0px;
+}
+
+.videowrapper iframe {
+ position: absolute;
+ left: 0px;
+ right: 0px;
+ top: 0px;
+ bottom: 0px;
+ height: 100%;
+ width: 100%;
+}
+
+.popcontainer{
+    width: 100%;
+    height: 100%;
+    color: #943B50;
+    opacity: 0.2;
+}
+
+
+.x{
+    width:12px;
+    height:12px;
+    display:block;
+    position: fixed;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background:#CCC;
+    border-radius:2px;
+    border:solid 2px #FFF;
+    transition: all .3s ease-out;
+    cursor:pointer;
+    top: 2.5%;
+    right: 9%;
+  }
+  
+  .x:hover{
+    background:#BB3333;
+    transform: rotate(180deg);
+  }
+  
+  .x b{
+    display:block;
+    position:absolute;
+    height:0;
+    width:0;
+    padding:0;
+    margin:0;
+    border:solid 6px rgba(255,255,255,0);
+  }
+  
+  .x b:nth-child(1){
+    border-top-color:#FFF;
+    top:-2px;
+  }
+  .x b:nth-child(2){
+    border-left-color:#FFF;
+    left:-2px;
+  }
+  .x b:nth-child(3){
+    border-bottom-color:#FFF;
+    bottom:-2px;
+  }
+  .x b:nth-child(4){
+    border-right-color:#FFF;
+    right:-2px;
+  }

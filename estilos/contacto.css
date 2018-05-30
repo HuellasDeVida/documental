@@ -1,0 +1,33 @@
+iframe {
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+.infocontacto {
+    position: fixed;
+    width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    
+}
+
+.alinearcontac{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1{
+    font-size: 2.5em;
+    color: white;
+}
+
+h3{
+    padding-bottom: 2em;
+}

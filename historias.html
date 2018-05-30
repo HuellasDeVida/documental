@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documental interactivo Huellas de Vida</title>
+
+    <link rel="stylesheet" type="text/css" href="estilos/historias.css">
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+    <link rel="stylesheet" type="text/css" href="estilos/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+<!--BODY-->
+
+<body>
+    <!--CONTENIDO-->
+    <div class="cont_sec_doc">
+        <div class="videosection">
+            <div class="nosearch">
+                <h1>Últimos agregados</h1>
+                <h1 id="masvistost">Videos más vistos</h1>
+                <div class="lastadded">
+                    <div class="videocontla">
+                        <!--MENU
+                                    <iframe src="https://www.youtube.com/embed/TO5E9NDigu4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/TO5E9NDigu4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/TO5E9NDigu4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/TO5E9NDigu4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/TO5E9NDigu4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>    
+                                    -->
+                    </div>
+                </div>
+                
+                <div class="popular">
+                        
+                    <div class="videocontpo">
+
+                    </div>
+                </div>
+            </div>
+            <div class="onsearch" style="display: none">
+
+            </div>
+        </div>
+        <div class="searchsection">
+            <form action="#">
+                <div class="wrap">
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="Buscar...">
+                        <button class="searchButton" onclick="busqueda()">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            <a href="#" class="btn_in_go_doc btnrecom" onclick="noBusca()">Ver recomendaciones</a>
+        </div>
+    </div>
+
+    <!--MENU-->
+    <header>
+        <!--BOTON MENU-->
+        <!--PANEL-->
+        <nav class="panelbar">
+            <ul>
+                <li title="Inicio">
+                    <a href="index.html">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+                <li title="Documental">
+                    <a href="documental.html">
+                        <i class="fa fa-video-camera"></i>
+                    </a>
+                </li>
+                <li title="Historias">
+                    <a href="historias.html">
+                        <i class="fa fa-group"></i>
+                    </a>
+                </li>
+                <li title="Contacto">
+                    <a href="contacto.html">
+                        <i class="fa fa-address-book"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+
+</body>
+
+<!--Termina Body-->
+
+<!--FOOTER-->
+
+<footer>
+
+    <div class="piedepag" align="center">
+        <p>Apoyan:</p>
+        <img class="logo-aso" src="img/logo-asoparupa.png" alt="logo Asoparupa">
+        <img class="logo-icesi" src="img/logo-icesi.png" alt="logo icesi">
+    </div>
+
+</footer>
+
+<!--TERMINA FOOTER-->
+
+<script>
+    function myFunction(x) {
+        x.classList.toggle("change");
+    }
+</script>
+
+<script>
+    function busqueda() {
+        $('.nosearch').css('display', 'none');
+        $('.onsearch').css('display', 'block');
+        $('.onsearch').empty();
+        $(".onsearch").append($('<h1>Resultados al buscar ' + $(".searchTerm").val() + ':</h1>'));
+        var maxResults = 10;
+        var channelID = "UCJM35zebmBhaYJ2w5nDzJhA";
+        var API_key = "AIzaSyBiMYerXm0u9f5doBdI-YljrSfsqIdyiwI";
+        var nohayresul = null;
+
+        $.get("https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=" +
+            channelID + "&maxResults=" + maxResults + "&key=" + API_key,
+            function (data, status) {
+                //console.log(data);
+                var videos = data.items;
+                var i;
+                var descriptionToLower;
+                for (i = 0; i < videos.length; i++) {
+                    if (videos[i].snippet.description.toLowerCase().includes($(".searchTerm").val())) {
+                        console.log("found");
+                        nohayresul = false;
+                        $(".onsearch").append($('<iframe src="https://www.youtube.com/embed/' + videos[i].id.videoId +
+                            '" frameborder="0" allowfullscreen></iframe>'));
+                    } else if(nohayresul!=false){
+                        nohayresul = true;
+                    }
+                }
+                if (nohayresul == true) {
+                    $(".onsearch").append($('<h1>Lo sentimos, no hay resultados de esa búsqueda.</h1>'));
+                }
+                console.log(videos);
+            });
+        console.log($(".searchTerm").val());
+    }
+
+    function noBusca() {
+        $('.nosearch').css('display', 'block');
+        $('.onsearch').css('display', 'none');
+    }
+</script>
+
+<!--CDN link for  TweenMax-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="scripts/main.js"></script>
+
+</html>
