@@ -221,6 +221,18 @@ body{
     opacity: 0.2;
 }
 
+.instrucc{
+    
+    width: 100%;
+}
+
+.instrucc img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
 
 .x{
     width:12px;
@@ -237,6 +249,10 @@ body{
     cursor:pointer;
     top: 2.5%;
     right: 9%;
+  }
+
+  .xinst{
+    right: 5em;
   }
   
   .x:hover{
