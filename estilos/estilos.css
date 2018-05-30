@@ -185,7 +185,7 @@ body{
     height: 100%;
 }
 
-.popup, popupDos, popupTres, popupCuatro, popupCinco {
+.popup, .popupDos, .popupTres, .popupCuatro, .popupCinco {
     position: fixed;
    left: 50%;
    top: 50%;

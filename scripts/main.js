@@ -11,7 +11,7 @@ function getVideos() {
             //console.log(data);
             var videos = data.items;
             console.log(videos);
-            for (var a = 0; a < 4; a++) {
+            for (var a = 0; a < 8; a++) {
                 $(".videocontla").append($('<iframe src="https://www.youtube.com/embed/' + videos[a].id.videoId + '" frameborder="0" allowfullscreen></iframe>'));                                
             }
             
@@ -24,8 +24,8 @@ function getVideos() {
                 });
             }
             for (var b = 0; b < 4; b++) {
-                $(".videocontpo").append($('<iframe src="https://www.youtube.com/embed/' + videos[b].id.videoId + '" frameborder="0" allowfullscreen></iframe>'));                                                
-                console.log("pasa");
+                //$(".videocontpo").append($('<iframe src="https://www.youtube.com/embed/' + videos[b].id.videoId + '" frameborder="0" allowfullscreen></iframe>'));                                                
+                //console.log("pasa");
             }            
         });
 }

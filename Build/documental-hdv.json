@@ -1,0 +1,11 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "documental-hdv.data.unityweb",
+"asmCodeUrl": "documental-hdv.asm.code.unityweb",
+"asmMemoryUrl": "documental-hdv.asm.memory.unityweb",
+"asmFrameworkUrl": "documental-hdv.asm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
