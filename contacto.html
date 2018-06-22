@@ -1,82 +1,101 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
-<meta charset="UTF-8">
-<title>Documental interactivo Huellas de Vida</title>
-    
-    
+    <meta charset="UTF-8">
+    <title>Documental interactivo Huellas de Vida</title>
+
+
     <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
     <link rel="stylesheet" type="text/css" href="estilos/contacto.css">
     <link rel="stylesheet" type="text/css" href="estilos/fonts.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    
-</head>
- <!--BODY-->
-    <body>
-         <!--CONTENIDO-->
-        <div class="cont_sec_doc">
-            <div class="infocontacto">
-                <div class="alinearcontac">
-                        <h1>VISÍTANOS</h1>
-                        <h3>Cra 59 #7a – 11 – Buenaventura</h3>
-                        <h1>LLÁMANOS</h1>
-                        <h3>(+57 2) 2430468 – (+57 ) 3173318088</h3>
-                        <h1>ESCRÍBENOS</h1>
-                        <h3>partera.asoparupa@gmail.com – partera.asoparupa@hotmail.com</h3>
-                </div>
-                    
-            </div>
-        <div class="mapa">
-            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Cra%2059%20%237a%20%E2%80%93%2011%20buenaventura&key=AIzaSyAQ_2gsL-EEnZZcYrRWr21CvMtYC9THfLU" allowfullscreen></iframe>
-        </div>
-        </div>
-        
-         <!--MENU-->
-        <header>
-             <!--BOTON MENU-->
-             <!--PANEL-->
-            <nav class="panelbar">
-                <ul>
-                    <li title="Inicio"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                    <li title="Documental"><a href="documental.html"><i class="fa fa-video-camera"></i></a></li>
-                    <li title="Historias"><a href="historias.html"><i class="fa fa-group"></i></a></li>
-                    <li title="Contacto"><a href="contacto.html"><i class="fa fa-address-book"></i></a></li>
-                </ul>
-                
-            </nav>
-        </header>
-        
-        
-    
-    </body>
-    
-     <!--Termina Body-->
+    <script src="./js/jquery-3.3.1.min.js"></script>
 
-     <!--FOOTER-->
-    
-    <footer>
-        
-        <div class="piedepag" align="center">
-            <p>Apoyan:</p>
-            <img class="logo-aso" src="img/logo-asoparupa.png" alt="logo Asoparupa">
-            <img class="logo-icesi" src="img/logo-icesi.png" alt="logo icesi">
+</head>
+<!--BODY-->
+
+<body onload="onLoadPageToolt()">
+    <!--CONTENIDO-->
+    <div class="cont_sec_doc">
+        <div class="infocontacto">
+            <div class="alinearcontac">
+                <h1>VISÍTANOS</h1>
+                <h3>Cra 59 #7a – 11 – Buenaventura</h3>
+                <h1>LLÁMANOS</h1>
+                <h3>(+57 2) 2430468 – (+57 ) 3173318088</h3>
+                <h1>ESCRÍBENOS</h1>
+                <h3>partera.asoparupa@gmail.com – partera.asoparupa@hotmail.com</h3>
+            </div>
+
         </div>
-    
-    </footer>
-    
-     <!--TERMINA FOOTER-->
-    
-    <script>
-        function myFunction(x) {
+        <div class="mapa">
+            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Cra%2059%20%237a%20%E2%80%93%2011%20buenaventura&key=AIzaSyAQ_2gsL-EEnZZcYrRWr21CvMtYC9THfLU"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!--MENU-->
+    <header>
+        <!--BOTON MENU-->
+        <!--PANEL-->
+        <nav class="panelbar">
+            <ul>
+                <li id="go-home" title="Inicio">
+                    <a href="index.html">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+                <li id="go-doc" title="Documental">
+                    <a href="documental.html">
+                        <i class="fa fa-video-camera"></i>
+                    </a>
+                </li>
+                <li id="go-his" title="Historias">
+                    <a href="historias.html">
+                        <i class="fa fa-group"></i>
+                    </a>
+                </li>
+                <li id="go-con" title="Contacto">
+                    <a href="contacto.html">
+                        <i class="fa fa-address-book"></i>
+                    </a>
+                </li>
+
+        </nav>
+    </header>
+
+
+
+</body>
+
+<!--Termina Body-->
+
+<!--FOOTER-->
+
+<footer>
+
+    <div class="piedepag" align="center">
+        <p>Apoyan:</p>
+        <img class="logo-aso" src="img/logo-asoparupa.png" alt="logo Asoparupa">
+        <img class="logo-icesi" src="img/logo-icesi.png" alt="logo icesi">
+    </div>
+
+</footer>
+
+<!--TERMINA FOOTER-->
+
+<script>
+    function myFunction(x) {
         x.classList.toggle("change");
-        }
-    </script>
-    
-    <!--CDN link for  TweenMax-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-    <script src="main.js"></script>
+    }
+</script>
+
+<!--CDN link for  TweenMax-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="./js/tool-tips.js"></script>
+
 </html>

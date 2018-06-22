@@ -1,73 +1,91 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
-<meta charset="UTF-8">
-<title>Huellas de vida documental</title>
-    
-    
+    <meta charset="UTF-8">
+    <title>Huellas de vida documental</title>
+
+
     <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
     <link rel="stylesheet" type="text/css" href="estilos/fonts.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/tool-tips.js"></script>
 </head>
- <!--BODY-->
-    <body>
-        
-         <!--VIDEO FONDO-->
-        <video autoplay muted loop id="myVideo">
-            <source src="img/toma-aerea.mp4" type="video/mp4">
-        </video>
-         <!--MENU-->
-        <header>
-                <nav class="panelbar">
+<!--BODY-->
+
+<body onload="onLoadPageToolt()">
+
+    <!--VIDEO FONDO-->
+    <video autoplay muted loop id="myVideo">
+        <source src="img/toma-aerea.mp4" type="video/mp4">
+    </video>
+    <!--MENU-->
+    <header>
+        <nav class="panelbar">
             <ul>
-                <li title="Inicio"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                <li title="Documental"><a href="documental.html"><i class="fa fa-video-camera"></i></a></li>
-                <li title="Historias"><a href="historias.html"><i class="fa fa-group"></i></a></li>
-                <li title="Contacto"><a href="contacto.html"><i class="fa fa-address-book"></i></a></li>
+                <li id="go-home" class="tooltip" title="Inicio">
+                    <a href="index.html">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+                <li id="go-doc" title="Documental">
+                    <a href="documental.html">
+                        <i class="fa fa-video-camera"></i>
+                    </a>
+                </li>
+                <li id="go-his" title="Historias">
+                    <a href="historias.html">
+                        <i class="fa fa-group"></i>
+                    </a>
+                </li>
+                <li id="go-con" title="Contacto">
+                    <a href="contacto.html">
+                        <i class="fa fa-address-book"></i>
+                    </a>
+                </li>
             </ul>
-                </nav>
-        </header>
-        
-        <!--Contenido-->
-            <div class="contenido" align="center">
-            <img src="img/logo-hdv.png" class="logo-hdv">
-            <p class="descripcion">Documental interactivo de la partería tradicional afro en el Pacífico colombiano</p>
-            <!--<button class="btn_in_go_doc">Ir al documental</button>-->
-            <a href="documental.html" class="btn_in_go_doc">Ir al documental</a>
-            </div>
-    
-    </body>
-    
-     <!--Termina Body-->
+        </nav>
+    </header>
 
-     <!--FOOTER-->
-    
-    <footer>
-        
-        <div class="piedepag" align="center">
-            <p>Apoyan:</p>
-            <img class="logo-aso" src="img/logo-asoparupa.png" alt="logo Asoparupa">
-            <img class="logo-icesi" src="img/logo-icesi.png" alt="logo icesi">
-        </div>
-    
-    </footer>
-    
-     <!--TERMINA FOOTER-->
-    
-    <script>
-        function myFunction(x) {
+    <!--Contenido-->
+    <div class="contenido" align="center">
+        <img src="img/logo-hdv.png" class="logo-hdv">
+        <p class="descripcion">Documental interactivo de la partería tradicional afro en el Pacífico colombiano</p>
+        <!--<button class="btn_in_go_doc">Ir al documental</button>-->
+        <a href="documental.html" class="btn_in_go_doc">Ir al documental</a>
+    </div>
+
+</body>
+
+<!--Termina Body-->
+
+<!--FOOTER-->
+
+<footer>
+
+    <div class="piedepag" align="center">
+        <p>Apoyan:</p>
+        <img class="logo-aso" src="img/logo-asoparupa.png" alt="logo Asoparupa">
+        <img class="logo-icesi" src="img/logo-icesi.png" alt="logo icesi">
+    </div>
+
+</footer>
+
+<!--TERMINA FOOTER-->
+
+<script>
+    function myFunction(x) {
         x.classList.toggle("change");
-        }
+    }
 
-        function setActiveClass(nameclass){
-            document.getElementById(nameclass).classList.add('active');
-        }
-    </script>
-    
+    function setActiveClass(nameclass) {
+        document.getElementById(nameclass).classList.add('active');
+    }
+</script>
+
 </html>
 
 <!--background="img/puerto-buenaventura.jpg" -->
-

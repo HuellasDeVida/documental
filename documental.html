@@ -12,105 +12,29 @@
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/documental-hdv.json", {onProgress: UnityProgress});
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/documental-hdv.json", {
+            onProgress: UnityProgress
+        });
     </script>
 
 
 </head>
 <!--BODY-->
 
-<body>
+<body onload="onLoadPage(), onLoadPageToolt()">
     <!--CONTENIDO-->
 
 
     <div class="cont_sec_doc">
 
-    </div>
-    <div class="webgl-content">
-        <div id="gameContainer" style="width: 1280px; height: 720px"></div>
-        <!-- unity icons
-                <div class="footer">
-                  <div class="webgl-logo"></div>
-                  <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-                  <div class="title">Prototipo_HV_Interaccion_I</div>
-                </div>-->
-    </div>
-
-    <div class="popup" style="display: none">
-        <div class="videowrapper">
-            <iframe src="https://www.youtube.com/embed/MqZ6l46tV3g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="x" onclick="$('.popup').css('display', 'none'), console.log('entra')">
-            <b></b>
-            <b></b>
-            <b></b>
-            <b></b>
-        </div>
-    </div>
-
-    <div class="popupDos" style="display: none">
-        <div class="videowrapper">
-            <iframe src="https://www.youtube.com/embed/fbNglufVzRQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="x" onclick="$('.popupDos').css('display', 'none'), console.log('entra')">
-            <b></b>
-            <b></b>
-            <b></b>
-            <b></b>
-        </div>
-    </div>
-
-    <div class="popupTres" style="display: none">
-        <div class="videowrapper">
-            <iframe src="https://www.youtube.com/embed/Sk0P86SKUzU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="x" onclick="$('.popupTres').css('display', 'none'), console.log('entra')">
-            <b></b>
-            <b></b>
-            <b></b>
-            <b></b>
-        </div>
-    </div>
-
-    <div class="popupCuatro" style="display: none">
-        <div class="videowrapper">
-            <iframe src="https://www.youtube.com/embed/airtVzrKZk8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="x" onclick="$('.popupCuatro').css('display', 'none'), console.log('entra')">
-            <b></b>
-            <b></b>
-            <b></b>
-            <b></b>
-        </div>
-    </div>
-
-    <div class="popupCinco" style="display: none">
-        <div class="videowrapper">
-            <iframe src="https://www.youtube.com/embed/irdFkdVOwUY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="x" onclick="$('.popupCinco').css('display', 'none'), console.log('entra')">
-            <b></b>
-            <b></b>
-            <b></b>
-            <b></b>
-        </div>
-    </div>
-
-    <div class="instrucc">
-        <img src="img/instrucciones.png" alt="">
-        <div class="x" onclick="$('.instrucc').css('display', 'none'), console.log('entra')">
-            <b></b>
-            <b></b>
-            <b></b>
-            <b></b>
-        </div>
     </div>
 
     <!--MENU-->
@@ -119,22 +43,22 @@
         <!--PANEL-->
         <nav class="panelbar">
             <ul>
-                <li title="Inicio">
+                <li id="go-home" title="Inicio">
                     <a href="index.html">
                         <i class="fa fa-home"></i>
                     </a>
                 </li>
-                <li title="Documental">
+                <li id="go-doc" title="Documental">
                     <a href="documental.html">
                         <i class="fa fa-video-camera"></i>
                     </a>
                 </li>
-                <li title="Historias">
+                <li id="go-his" title="Historias">
                     <a href="historias.html">
                         <i class="fa fa-group"></i>
                     </a>
                 </li>
-                <li title="Contacto">
+                <li id="go-con" title="Contacto">
                     <a href="contacto.html">
                         <i class="fa fa-address-book"></i>
                     </a>
@@ -144,6 +68,97 @@
         </nav>
     </header>
 
+    <div class="map-container">
+        <div class="button-maps">
+            <button id="world-map" class="btn-maps">Mapa Mundo</button>
+            <button id="interactive-map" class="btn-maps">Mapa Interactivo</button>
+        </div>
+        <div id='map' class="interactive-map-style"></div>
+        <div class="webgl-content">
+            <div id="gameContainer" class="hidde-element map-style"></div>
+            <!-- unity icons
+                            <div class="footer">
+                              <div class="webgl-logo"></div>
+                              <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+                              <div class="title">Prototipo_HV_Interaccion_I</div>
+                            </div>-->
+        </div>
+        <div id="instuctions" class="instrucc hidde-element">
+            <img src="img/instrucciones.png" alt="">
+            <div class="x" onclick="$('.instrucc').css('display', 'none'), console.log('entra')">
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+            </div>
+        </div>
+        <div class="popup" style="display: none">
+            <div class="videowrapper">
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/MqZ6l46tV3g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="x" onclick="$('.popup').css('display', 'none'), pararVideo()">
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+            </div>
+        </div>
+
+        <div class="popupDos" style="display: none">
+            <div class="videowrapper">
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/fbNglufVzRQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="x" onclick="$('.popupDos').css('display', 'none'), pararVideo()">
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+            </div>
+        </div>
+
+        <div class="popupTres" style="display: none">
+            <div class="videowrapper">
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/Sk0P86SKUzU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="x" onclick="$('.popupTres').css('display', 'none'), pararVideo()">
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+            </div>
+        </div>
+
+        <div class="popupCuatro" style="display: none">
+            <div class="videowrapper">
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/airtVzrKZk8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="x" onclick="$('.popupCuatro').css('display', 'none'), pararVideo()">
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+            </div>
+        </div>
+
+        <div class="popupCinco" style="display: none">
+            <div class="videowrapper">
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/irdFkdVOwUY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="x" onclick="$('.popupCinco').css('display', 'none'), pararVideo()">
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+            </div>
+        </div>
+    </div>
+    <div class="wait-screen">
+        <div class="loader">
+                <div class="lds-ripple"><div></div><div></div></div>
+                <h1>Estamos cargando el contenido</h1>
+        </div>
+            
+    </div>
 </body>
 
 <!--Termina Body-->
@@ -170,6 +185,13 @@
 
 <script>
 
+    function pararVideo() {
+       // $('.video-doc-int')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+    }
+
+</script>
+
+<script>
     $ = function (id) {
         return document.getElementById(id);
     }
@@ -180,27 +202,31 @@
     var hide = function (id) {
         $('.popup').css('display', 'none');
     }
-
 </script>
 
 <script>
     function videoUno() {
         $('.popup').css('display', 'block');
     }
+
     function videoDos() {
         $('.popupDos').css('display', 'block');
     }
+
     function videoTres() {
         $('.popupTres').css('display', 'block');
     }
+
     function videoCuatro() {
         $('.popupCuatro').css('display', 'block');
     }
+
     function videoCinco() {
         $('.popupCinco').css('display', 'block');
     }
 </script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/documental.js"></script>
+<script src="./js/tool-tips.js"></script>
 
 </html>
