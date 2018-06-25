@@ -1,8 +1,4 @@
 
-function closeWaitScreen() {
-    $('.wait-screen').css('display', 'none');
-  }
-  
 function hoverColorByPage(){
     if(window.location.pathname.includes('index')){
         $('#go-home').css('background-color', 'rgb(133, 49, 68)');
@@ -22,5 +18,4 @@ function hoverColorByPage(){
 
 function onLoadPageToolt() {
    hoverColorByPage();
-   closeWaitScreen();
 }

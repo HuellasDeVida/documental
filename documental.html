@@ -12,28 +12,18 @@
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/documental-hdv.json", {
-            onProgress: UnityProgress
-        });
-    </script>
-
-
+    <link rel="stylesheet" type="text/css" href="estilos/introjs.css">
 </head>
 <!--BODY-->
 
-<body onload="onLoadPage(), onLoadPageToolt()">
+<body onload="onLoadPage(), onLoadPageToolt(), introJs().start()">
     <!--CONTENIDO-->
 
 
-    <div class="cont_sec_doc">
+    <div class="cont_sec_doc" data-step="1" data-intro="Descubre las motivaciones y dificultades de la partería para sobrevivir">
 
     </div>
 
@@ -68,12 +58,12 @@
         </nav>
     </header>
 
-    <div class="map-container">
-        <div class="button-maps">
+    <div class="map-container" data-step="2" data-intro="Las parteras son ayudadoras especialmente en el territorio de Buenaventura">
+        <div data-step="3" data-intro="Cambia la manera como quieres ver el contenido" class="button-maps">
             <button id="world-map" class="btn-maps">Mapa Mundo</button>
             <button id="interactive-map" class="btn-maps">Mapa Interactivo</button>
         </div>
-        <div id='map' class="interactive-map-style"></div>
+        <div id='map' class="interactive-map-style" data-step="4" data-intro="Clickea los globos azules para descubrir el contenido"></div>
         <div class="webgl-content">
             <div id="gameContainer" class="hidde-element map-style"></div>
             <!-- unity icons
@@ -94,7 +84,8 @@
         </div>
         <div class="popup" style="display: none">
             <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/MqZ6l46tV3g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/MqZ6l46tV3g" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
             </div>
             <div class="x" onclick="$('.popup').css('display', 'none'), pararVideo()">
                 <b></b>
@@ -106,7 +97,8 @@
 
         <div class="popupDos" style="display: none">
             <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/fbNglufVzRQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/fbNglufVzRQ" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
             </div>
             <div class="x" onclick="$('.popupDos').css('display', 'none'), pararVideo()">
                 <b></b>
@@ -118,7 +110,8 @@
 
         <div class="popupTres" style="display: none">
             <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/Sk0P86SKUzU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/Sk0P86SKUzU" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
             </div>
             <div class="x" onclick="$('.popupTres').css('display', 'none'), pararVideo()">
                 <b></b>
@@ -130,7 +123,8 @@
 
         <div class="popupCuatro" style="display: none">
             <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/airtVzrKZk8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/airtVzrKZk8" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
             </div>
             <div class="x" onclick="$('.popupCuatro').css('display', 'none'), pararVideo()">
                 <b></b>
@@ -142,7 +136,8 @@
 
         <div class="popupCinco" style="display: none">
             <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/irdFkdVOwUY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe class="video-doc-int" src="https://www.youtube.com/embed/irdFkdVOwUY" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
             </div>
             <div class="x" onclick="$('.popupCinco').css('display', 'none'), pararVideo()">
                 <b></b>
@@ -154,10 +149,16 @@
     </div>
     <div class="wait-screen">
         <div class="loader">
-                <div class="lds-ripple"><div></div><div></div></div>
-                <h1>Estamos cargando el contenido</h1>
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+            <h1>Estamos cargando el contenido</h1>
         </div>
-            
+
+    </div>
+    <div class="">
+
     </div>
 </body>
 
@@ -176,7 +177,16 @@
 </footer>
 
 <!--TERMINA FOOTER-->
-
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+<script src="TemplateData/UnityProgress.js"></script>
+<script src="Build/UnityLoader.js"></script>
+<script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/documental-hdv.json", {
+        onProgress: UnityProgress
+    });
+</script>
+<script src="./js/intro.js"></script>
 <script>
     function myFunction(x) {
         x.classList.toggle("change");
@@ -186,7 +196,7 @@
 <script>
 
     function pararVideo() {
-       // $('.video-doc-int')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        // $('.video-doc-int')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
     }
 
 </script>

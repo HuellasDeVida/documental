@@ -1,4 +1,8 @@
 
+function closeWaitScreen() {
+  $('.wait-screen').css('display', 'none');
+}
+
 function onLoadPage() {
   const world_map = document.getElementById('map');
   const interactive_map = document.getElementById('gameContainer');
@@ -15,6 +19,7 @@ function onLoadPage() {
     instructions.classList.remove("hidde-element");
     world_map.classList.add("hidde-element");
   })
+  closeWaitScreen();
 }
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGVuZGVsY3VhcnRhcyIsImEiOiJjamlveDZ3YTUwdW91M3BxaGN3NHNqMWFyIn0.EnbWjk5wHR478Pgi95UjOQ';
 const map = new mapboxgl.Map({
@@ -98,3 +103,4 @@ map.on('load', function () {
       .addTo(map);
   });
 })
+
