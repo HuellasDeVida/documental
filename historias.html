@@ -13,13 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos/introjs.css">
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 <!--BODY-->
 
-<body onload="onLoadPage(),onLoadPageToolt()">
-         <div class="cont_sec_doc">
+<body onload="onLoadPage(),onLoadPageToolt(), introJs().start()">
+         <div class="cont_sec_doc" data-step="1" data-intro="Descubre historias que reflejan el conocimiento y cultura de la Partería tradicional afro">
         <div class="videosection">
             <div class="nosearch">
                 <h1>Últimos agregados</h1>
@@ -37,7 +38,7 @@
             <form action="#" class="search-form">
                 <div class="wrap">
                     <div class="search">
-                        <input type="text" class="searchTerm" placeholder="Buscar...">
+                        <input type="text" class="searchTerm" placeholder="Buscar..." data-step="2" data-intro="Busca según lo que quieres conocer">
                         <button class="searchButton" onclick="busqueda()">
                             <i class="fa fa-search"></i>
                         </button>
@@ -46,9 +47,9 @@
 
             </form>
 
-            <a href="#" class="btnrecom" onclick="noBusca()">Ver recomendaciones</a>
+            <a href="#" class="btnrecom" onclick="noBusca()" data-step="3" data-intro="Mira los últimos videos agregados">Ver recomendaciones</a>
             <div class="dropdown">
-                    <button class="dropbtn">Categorías</button>
+                    <button class="dropbtn" data-step="4" data-intro="Filtra los videos según la categoría que desees">Categorías</button>
                     <div id="drop-content" class="dropdown-content">
                       <a href="#" class="filter" name="cultura" >Cultura</a>
                       <a href="#" class="filter" name="practicas">Prácticas</a>
@@ -143,5 +144,6 @@
 
 <script src="scripts/main.js"></script>
 <script src="./js/tool-tips.js"></script>
-
+<script src="./js/intro.js"></script>
+<script src="scripts/videoLightning.js"></script>
 </html>
