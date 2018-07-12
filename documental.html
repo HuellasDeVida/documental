@@ -13,8 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="stylesheet" type="text/css" href="estilos/introjs.css">
 </head>
 <!--BODY-->
@@ -59,93 +57,9 @@
     </header>
 
     <div class="map-container" data-step="2" data-intro="Las parteras son ayudadoras especialmente en el territorio de Buenaventura">
-        <div data-step="3" data-intro="Cambia la manera como quieres ver el contenido" class="button-maps">
-            <button id="world-map" class="btn-maps">Mapa Mundo</button>
-            <button id="interactive-map" class="btn-maps">Mapa Interactivo</button>
-        </div>
-        <div id='map' class="interactive-map-style" data-step="4" data-intro="Clickea los globos azules para descubrir el contenido"></div>
-        <div class="webgl-content">
-            <div id="gameContainer" class="hidde-element map-style"></div>
-            <!-- unity icons
-                            <div class="footer">
-                              <div class="webgl-logo"></div>
-                              <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-                              <div class="title">Prototipo_HV_Interaccion_I</div>
-                            </div>-->
-        </div>
-        <div id="instuctions" class="instrucc hidde-element">
-            <img src="img/instrucciones.png" alt="">
-            <div class="x" onclick="$('.instrucc').css('display', 'none'), console.log('entra')">
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </div>
-        </div>
-        <div class="popup" style="display: none">
-            <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/MqZ6l46tV3g" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="x" onclick="$('.popup').css('display', 'none'), pararVideo()">
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </div>
-        </div>
-
-        <div class="popupDos" style="display: none">
-            <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/fbNglufVzRQ" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="x" onclick="$('.popupDos').css('display', 'none'), pararVideo()">
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </div>
-        </div>
-
-        <div class="popupTres" style="display: none">
-            <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/Sk0P86SKUzU" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="x" onclick="$('.popupTres').css('display', 'none'), pararVideo()">
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </div>
-        </div>
-
-        <div class="popupCuatro" style="display: none">
-            <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/airtVzrKZk8" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="x" onclick="$('.popupCuatro').css('display', 'none'), pararVideo()">
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </div>
-        </div>
-
-        <div class="popupCinco" style="display: none">
-            <div class="videowrapper">
-                <iframe class="video-doc-int" src="https://www.youtube.com/embed/irdFkdVOwUY" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="x" onclick="$('.popupCinco').css('display', 'none'), pararVideo()">
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </div>
-        </div>
+        
+        <div id='map' class="interactive-map-style" data-step="3" data-intro="Clickea los globos azules para descubrir el contenido"></div>
+        
     </div>
     <div class="wait-screen">
         <div class="loader">
@@ -179,13 +93,8 @@
 <!--TERMINA FOOTER-->
 <script src="./js/jquery-3.3.1.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
-<script src="TemplateData/UnityProgress.js"></script>
-<script src="Build/UnityLoader.js"></script>
-<script>
-    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/documental-hdv.json", {
-        onProgress: UnityProgress
-    });
-</script>
+
+
 <script src="./js/intro.js"></script>
 <script>
     function myFunction(x) {
@@ -214,27 +123,6 @@
     }
 </script>
 
-<script>
-    function videoUno() {
-        $('.popup').css('display', 'block');
-    }
-
-    function videoDos() {
-        $('.popupDos').css('display', 'block');
-    }
-
-    function videoTres() {
-        $('.popupTres').css('display', 'block');
-    }
-
-    function videoCuatro() {
-        $('.popupCuatro').css('display', 'block');
-    }
-
-    function videoCinco() {
-        $('.popupCinco').css('display', 'block');
-    }
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="./js/documental.js"></script>
 <script src="./js/tool-tips.js"></script>
